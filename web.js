@@ -1,11 +1,8 @@
 var express = require('express');
-var app = express();
-app.use(express.logger());
-
-web_text = fs.readFileSync('index.html', 'utf8');
+var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(web_text);
+  response.send("Garde la peche");
 });
 
 var port = process.env.PORT || 5000;
